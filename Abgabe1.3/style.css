@@ -1,0 +1,187 @@
+html{
+
+    Background-Image: url("bg.png");
+    
+    font-family:Arial, Helvetica, sans-serif;
+    Font-size: 1em;
+    Line-height: 1.5em;
+    }
+    h1{
+    line-height:2em;
+    }
+    
+    body{
+     Width:800px;
+    Margin-left:Auto;
+    Margin-right:Auto;
+    }
+    
+    nav a{
+    display: inline;
+    color: white;
+    text-decoration: none;
+    }
+    
+    a:hover{
+    
+    Color:rgb(199, 194, 194);
+    }
+    #aktuell{
+    font-weight:bold;
+    }
+    
+    .iconClass:hover{
+    border: 3px solid rgb(183, 204, 207);
+    }
+    
+   
+    h1{
+        margin-top: 50px;
+    }
+
+   
+    #navi {
+    position: fixed;
+    width: 800px;
+    height: 30px;
+    background-color: rgb(42, 153, 135);
+    top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    nav{
+        float: right;
+        margin-right: 15px;
+    }
+    .schatten{
+        box-shadow: 10px 10px 5px grey;
+
+    }
+    #Anker{
+        color: darkslategray;
+        font-size: 4em;
+    }
+    h1{
+        color: darkslategray;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #kasten{
+        background-color: rgb(236, 203, 140);
+        padding: 10px 200px 10px 200px;
+        margin: 20px 0 0 0;  
+    }
+    h2{
+        color: rgb(124, 38, 23);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #teck{
+        text-decoration: none;
+        background-color: teal;
+        color: white;
+    }
+    #teck:hover{
+        color: rgb(199, 194, 194);
+    }
+    p{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #box{
+        background-color: teal;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 10px;
+        border-radius: 25px;
+        width: 130px;
+    
+
+    }
+    #box:hover{
+        color:rgb(199, 194, 194);
+        
+        }
+    #fuerte{
+        font-family: Arial, Helvetica, sans-serif;
+        }
+    #liste{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #konzert{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    p{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #shadow{
+        color: lightsteelblue;
+        text-shadow: 2px 2px 4px #000000;
+        font-size: 2em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #portrait{
+        box-shadow: 10px 10px 5px grey;
+    }
+    #vorstellung{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #se{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #ende{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    h3{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #tabelle {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      #tabelle td, #tabelle th {
+        border: 1px solid #ddd;
+        padding: 8px;
+      }
+      
+      #tabelle tr:nth-child(even){
+          background-color: #f2f2f2;
+        }
+      
+      #tabelle tr:hover {
+          background-color: #ddd;
+        }
+      
+      #tabelle th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #fa7eca;
+        color: white;
+      }
+      .heading{
+          font-size: 1.5em;
+      }
+      h3{
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      #form{
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      .schrift{
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      #Nachricht{
+        height:20px; 
+        width:220px; 
+        padding:0 0 40px 5px;
+      }
+      #E-mail{
+          padding:5px;
+      }
+      #lname{
+          padding: 5px;
+      }
+      #fname{
+          padding: 5px;
+      }
