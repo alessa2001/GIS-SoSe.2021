@@ -1,0 +1,269 @@
+html{
+
+    Background-Image: url("bg.png");
+    
+    font-family:Arial, Helvetica, sans-serif;
+    Font-size: 1em;
+    Line-height: 1.5em;
+    }
+    h1{
+    line-height:2em;
+    }
+    .container {
+        display:none;
+    }
+    body{
+     Width:80%;
+    Margin-left:Auto;
+    Margin-right:Auto;
+    }
+    
+    nav a{
+    display: inline;
+    color: white;
+    text-decoration: none;
+    }
+    
+    a:hover{
+    
+    Color:rgb(199, 194, 194);
+    }
+    #aktuell{
+    font-weight:bold;
+    }
+    
+    .iconClass:hover{
+    border: 1px solid rgb(183, 204, 207);
+    }
+    
+   
+    h1{
+        margin-top: 50px;
+    }
+
+   
+    #navi {
+    position: fixed;
+    width: 80%;
+    height: 30px;
+    background-color: rgb(42, 153, 135);
+    top: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    }
+    #navi a:hover {
+        color:#333;
+        }
+    nav{
+        float: right;
+        margin-right: 15px;
+    }
+    .schatten{
+        box-shadow: 10px 10px 5px grey;
+
+    }
+    #Anker{
+        color: darkslategray;
+        font-size: 4em;
+    }
+    h1{
+        color: darkslategray;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #kasten{
+        background-color: rgb(236, 203, 140);
+        padding: 3% 30% 3% 30%;
+        margin: 20px 0 0 0;  
+    }
+    h2{
+        color: rgb(124, 38, 23);
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    video{
+        width:100%;
+    }
+    #teck{
+        text-decoration: none;
+        background-color: teal;
+        color: white;
+    }
+    #teck:hover{
+        color: rgb(199, 194, 194);
+    }
+   html  p{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #box{
+        background-color: teal;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        padding: 3%;
+        border-radius: 25px;
+        width: 20%;
+    
+
+    }
+    #box:hover{
+        color:rgb(199, 194, 194);
+        
+        }
+    #fuerte{
+        font-family: Arial, Helvetica, sans-serif;
+        }
+    #liste{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #konzert{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    p{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #shadow{
+        color: lightsteelblue;
+        text-shadow: 2px 2px 4px #000000;
+        font-size: 2em;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #portrait{
+        box-shadow: 10px 10px 5px grey;
+    }
+    #vorstellung{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #se{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #ende{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    h3{
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #tabelle {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 1em;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      #tabelle td, #tabelle th {
+        border: 1px solid #ddd;
+        padding: 2%;
+      }
+      
+      #tabelle tr:nth-child(even){
+          background-color: #f2f2f2;
+        }
+      
+      #tabelle tr:hover {
+          background-color: #ddd;
+        }
+      
+      #tabelle th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color: #fa7eca;
+        color: white;
+      }
+      .heading{
+          font-size: 1.5em;
+      }
+      h3{
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      #form{
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      .schrift{
+          font-family: Arial, Helvetica, sans-serif;
+      }
+      #Nachricht{
+        height:20px; 
+        width:40%; 
+        
+      }
+      #E-mail{
+          width:40%;
+          height:3em;
+      }
+      #lname{
+        width:40%;
+        height:3em;
+      }
+      #fname{
+        width:40%;
+        height:3em;
+      }
+
+
+      @media only screen and (max-width: 1024px) {
+        body{
+            font-size: 1.5em;
+            line-height:2em;
+        }
+        #navi{
+            height: 2em;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        
+        #navi{
+            height: 0vh;
+            width:0%;
+            left:-20%;
+            top:0;
+            
+            transition: 0.6s;
+        }
+        #navi a{
+            
+           font-size:4em;
+           line-height: 2em;
+           margin-left:5%;
+            
+        }
+
+        .container {
+            display: inline-block;
+            cursor: pointer;
+            left:80%;
+            top:1em;
+            position: fixed;
+
+          }
+          
+          .bar1, .bar2, .bar3 {
+            width: 70px;
+            height: 10px;
+            background-color: #333;
+            margin: 12px 0;
+            transition: 0.4s;
+    
+          }
+          
+          .change .bar1 {
+            -webkit-transform: rotate(-45deg) translate(-18px, 12px);
+            transform: rotate(-45deg) translate(-18px, 12px);
+          }
+          
+          .change .bar2 {opacity: 0;}
+          
+          .change .bar3 {
+            -webkit-transform: rotate(45deg) translate(-16px, -16px);
+            transform: rotate(45deg) translate(-16px, -16px);
+          }
+          .change2{
+              height: 100vh !important;
+              width: 100% !important;
+              left: 0% !important;
+          }
+          img{
+              width:100%;
+          }
+          #Anker{
+              font-size: 2.2em;
+          }
+    }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Alessa Daltoè">
+    <title>Alessa Daltoè - Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+        <h1 id="Anker">HERZLICH WILLKOMMEN</h1>
+      <div id="navi">
+       <nav>
+        <a id="aktuell" href="portfolio.html">Portfolio</a>
+        <a href="steckbrief.html">Steckbrief</a>
+        <a href="kontakt.html">Kontakt</a>
+       </nav>
+      </div>
+      <div class="container" onclick="myFunction(this)">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+    </header>
+    <main>
+        <h1 id="kasten">Lieblingsorte nah & fern</h1>
+        <h2>Unsere kleine <i>Hütte</i> ...</h2>
+        <p>... mitten auf der <em><b>Schwäbischen Alb.</b></em> Erbaut wurde sie im Jahr <u><b>1935</b></u> von meinem Uropa und seinen engsten Freunden und ist bis heute etwas ganz besonderes. Umgeben von Wald, Wiesen und Weiden kann man da oben völlig die Ruhe genießen. Auch der <em><b>Mittagsfels</b></em>, von dem man eine wunderschöne Aussicht hat und von dort man bis zur <a id="teck" href="https://www.burg-teck-alb.de"><b>Burg Teck</b></a> blicken kann, lädt vor allem bei Sonnenschein zum Verweilen ein <i>(s.Bild rechts)</i>. Auch ein Spaziergang zum Breitenstein, welcher direkt am Albtrauf liegt, ist auf jeden Fall lohnenswert <i>(s.Bild mittig)</i>.</p>
+        <img class="schatten" src="Hütte.jpg" alt="Hütte auf der Schwäbischen Alb">
+        <img src="Albtrauf.jpg" alt="Blick vom Breitenstein ins Tal">
+        <img src="Mittagsfels.JPG" alt="Ausblick vom Mittagsfels">
+        <h2><em>Fuerteventura - Eine Reise in den Süden</em></h2>
+        <div id="fuerte">Seit 2001 haben wir der kanarischen Insel jährlich ein Besüchle abgestattet, daher steckt diese auch voller schöner Erinnerungen. Wer Badeurlaube bevorzugt und weitläufige Sandstrände liebt, ist hier genau richtig. Allerdings muss man den starken Wind und die karge Landschaft mögen. Hin und wieder begegnet man eventuell mal einem wilden Esel, einer Ziege oder dem ein oder anderen frechen Streifenhörnchen.</div>
+        <hr>
+        <p>An diesen Orten sollte man auf jeden Fall mal vorbeischauen:</p>
+        <ol id="liste">
+            <li>Playa de Cofete</li> 
+            <li>Corralejo</li> 
+            <li>Playa de Sotavento</li> 
+            <li>Oasis Park</li> 
+            <li>La Pared</li> 
+            <li>Morro Jable</li> 
+            <li>Costa Calma</li> 
+            <li>Jandìa</li> 
+            <li>Ajuy</li>
+            <li> ... und viele mehr</li>
+        </ol>
+        <img src="Westküste.jpg" alt="Playa de Cofete, Westküste">
+        <img src="Streifenhörnchen.jpg" alt="Streifenhörnchen">
+        <img src="Sanddüne.jpg" alt="Große Sanddüne von Playa de Sotavento">
+        <h2><em>Konzert Sommer 2019</em></h2>
+        <p id="konzert"><b>Abriss nach der letzten Abi-Prüfung mit <u>Cro & Majan</u> am Mercedes-Benz-Museum</b></p>
+        
+        <video class="schatten" src="Cro-Konzert.mp4" controls width="600"></video>
+        <a href="#Anker"><p id="box"><b>Zurück nach oben</b></p></a>
+    </main>
+  </body>
+</html>
+<script>
+  function myFunction(x) {
+    x.classList.toggle("change");
+    document.getElementById("navi").classList.toggle("change2");
+  }
+  </script>
