@@ -227,6 +227,7 @@ namespace Aufgabe6d {
         if (i % 4 == 0) {
             schachbrett += "/n";
         }
+        console.log(schachbrett);
     }
 }
 
@@ -241,6 +242,7 @@ namespace Aufgabe6e {
             if (i % (b / 2) == 0) {
                 schachbrett += "/n";
             }
+            console.log(schachbrett);
         }
     }
     schachbrettErstellen(3);

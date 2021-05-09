@@ -201,6 +201,7 @@ var Aufgabe6d;
         if (i % 4 == 0) {
             schachbrett += "/n";
         }
+        console.log(schachbrett);
     }
 })(Aufgabe6d || (Aufgabe6d = {}));
 //e)
@@ -215,6 +216,7 @@ var Aufgabe6e;
             if (i % (b / 2) == 0) {
                 schachbrett += "/n";
             }
+            console.log(schachbrett);
         }
     }
     schachbrettErstellen(3);
