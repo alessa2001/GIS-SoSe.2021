@@ -231,6 +231,7 @@ namespace Aufgabe_3 {
     function drawReckt(): Rechteck {
         let rechteck: Rechteck = new Rechteck(Math.round(Math.random() * 200), Math.round(Math.random() * 200), Math.round(Math.random() * 200), Math.round(Math.random() * 200), Math.round(Math.random() * 5));
         rechteck.draw();
+
         return rechteck;
     }
 

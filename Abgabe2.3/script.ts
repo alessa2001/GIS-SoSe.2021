@@ -1,6 +1,10 @@
 //Aufgabe 1:
 namespace Rechtecke {
 
+    document.getElementById("button1").addEventListener("click", einRechteckErzeugen);
+    document.getElementById("button2").addEventListener("click", seiteZurücksetzen);
+    
+
     let inhalt: HTMLElement = document.getElementById("rechteck1");
     for (let i: number = 0; i < 5; i++) {
         let rechteck: HTMLDivElement = document.createElement("div");
@@ -14,17 +18,30 @@ namespace Rechtecke {
         rechteck.style.position = "absolute";
         inhalt.appendChild(rechteck);
     }
-    let element: HTMLElement = document.getElementById("button1");
-    let buttonEins: HTMLButtonElement = document.createElement("button");
-    buttonEins.getAttribute("button1");
+    function einRechteckErzeugen(): void {
+        let div: HTMLDivElement = document.createElement("div");
+        div.style.top = Math.round(Math.random() * 1000) + "px";
+        div.style.left = Math.round(Math.random() * 1000) + "px";
+        div.style.width = Math.round(Math.random() * 1000) + "px";
+        div.style.height = Math.round(Math.random() * 1000) + "px";
+        div.style.backgroundColor = "rgb(" + Math.random() + 256 + " " + Math.random() * 256 + " " + Math.random() * 256 + ")";
+        document.getElementById("rechteck1").appendChild(div);
+    }
 
-    buttonEins.style.backgroundColor = "green";
-
-
+    function seiteZurücksetzen(): void {
+        window.location.reload();
+    }
 
 }
 
-//Aufgabe 2:
+
+
+
+
+
+
+
+
 
 
 

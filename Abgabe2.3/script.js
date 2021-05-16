@@ -2,6 +2,8 @@
 //Aufgabe 1:
 var Rechtecke;
 (function (Rechtecke) {
+    document.getElementById("button1").addEventListener("click", einRechteckErzeugen);
+    document.getElementById("button2").addEventListener("click", seiteZurücksetzen);
     let inhalt = document.getElementById("rechteck1");
     for (let i = 0; i < 5; i++) {
         let rechteck = document.createElement("div");
@@ -14,10 +16,17 @@ var Rechtecke;
         rechteck.style.position = "absolute";
         inhalt.appendChild(rechteck);
     }
-    let element = document.getElementById("button1");
-    let buttonEins = document.createElement("button");
-    buttonEins.getAttribute("button1");
-    buttonEins.style.backgroundColor = "green";
+    function einRechteckErzeugen() {
+        let div = document.createElement("div");
+        div.style.top = Math.round(Math.random() * 1000) + "px";
+        div.style.left = Math.round(Math.random() * 1000) + "px";
+        div.style.width = Math.round(Math.random() * 1000) + "px";
+        div.style.height = Math.round(Math.random() * 1000) + "px";
+        div.style.backgroundColor = "rgb(" + Math.random() + 256 + " " + Math.random() * 256 + " " + Math.random() * 256 + ")";
+        document.getElementById("rechteck1").appendChild(div);
+    }
+    function seiteZurücksetzen() {
+        window.location.reload();
+    }
 })(Rechtecke || (Rechtecke = {}));
-//Aufgabe 2:
 //# sourceMappingURL=script.js.map
