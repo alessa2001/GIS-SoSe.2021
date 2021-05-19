@@ -13,6 +13,9 @@ var DigitalesKlappbuch;
     }
     let currentParts = [];
     let currentPart = "";
+    //Klappbuch
+    console.log(document.title);
+    console.log(bildteil.koepfe);
     switch (document.title) {
         case "Pinguin - Oben":
             currentPart = "oben";

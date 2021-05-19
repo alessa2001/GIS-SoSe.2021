@@ -17,6 +17,9 @@ namespace DigitalesKlappbuch {
     let currentParts: PinguinTeil[] = [];
     let currentPart: string = "";
 
+    //Klappbuch
+    console.log(document.title);
+    console.log(bildteil.koepfe);
     switch (document.title) {
         case "Pinguin - Oben":
         currentPart = "oben";
@@ -34,7 +37,7 @@ namespace DigitalesKlappbuch {
         default:
         break;
     }
-
+    
     auswahlMoeglichkeiten(currentParts);
 
     function teilbildErzeugen(_bildteil: PinguinTeil): HTMLDivElement {
