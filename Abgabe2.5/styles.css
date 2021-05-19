@@ -1,0 +1,27 @@
+#style{
+    background-image: url("footprints01.jpg");
+    Width:800px;
+    Margin-left:Auto;
+    Margin-right:Auto;
+        
+}
+
+body {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: auto;
+    max-width: 400px;
+}
+img {
+    width: 300px;
+}
+
+
+
+h1{
+    text-align: center;
+    background-color: darkblue;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}

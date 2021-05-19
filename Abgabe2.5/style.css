@@ -1,0 +1,58 @@
+#style{
+background-image: url("footprints01.jpg");
+Width:800px;
+Margin-left:Auto;
+Margin-right:Auto;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+
+}
+
+h1{
+    text-align: center;
+    background-color: darkblue;
+    width: 800px;
+    color: white;
+    
+    
+}
+
+h3{
+    text-align: center;
+}
+
+
+
+img {
+    width: 300px;
+    max-height: 400px;
+    border-right: 10px;
+    padding: 5px;
+    cursor: pointer;
+}
+
+#Auswahl img {
+    margin: auto;
+    display: block;
+    width: 200px;
+}
+ #Auswahl {
+     float: middle;
+ }
+.selected {
+    border-radius: 5px;
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+}
+button {
+    background-color: darkblue;
+    color: white;
+    font-weight: bold;
+    padding: 15px 32px;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}

@@ -12,7 +12,7 @@ namespace P2_4 {
     allMiddle.push(middle1);
     let middle2: Bild = { link: "assets/Middle 2.png", typ: 1 };
     allMiddle.push(middle2);
-    let middle3: Bild = { link: "assets/middle 3.jpg", typ: 1 };
+    let middle3: Bild = { link: "assets/Middle 3.jpg", typ: 1 };
     allMiddle.push(middle3);
 
     //Bottom
