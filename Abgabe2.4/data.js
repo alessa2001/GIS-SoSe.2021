@@ -13,7 +13,7 @@ var P2_4;
     P2_4.allMiddle.push(middle1);
     let middle2 = { link: "assets/Middle 2.png", typ: 1 };
     P2_4.allMiddle.push(middle2);
-    let middle3 = { link: "assets/middle 3.jpg", typ: 1 };
+    let middle3 = { link: "assets/Middle 3.jpg", typ: 1 };
     P2_4.allMiddle.push(middle3);
     //Bottom
     let bottom1 = { link: "assets/Bottom 1.png", typ: 2 };

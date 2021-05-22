@@ -1,43 +1,43 @@
 {
     "allTop": [
         {
-            "link": "assets/Top_1.png",
+            "link": "assets/Top1.png",
             "typ": 0
         },
         {
-            "link": "assets/Top_2.png",
+            "link": "assets/Top2.png",
             "typ": 0
         },
         {
-            "link": "assets/Top_3.jpg",
+            "link": "assets/Top3.jpg",
             "typ": 0
         }
     ],
     "allMiddle": [
         {
-            "link": "assets/Middle_1.png",
+            "link": "assets/Middle 1.png",
             "typ": 1
         },
         {
-            "link": "assets/Middle_2.png",
+            "link": "assets/Middle 2.png",
             "typ": 1
         },
         {
-            "link": "assets/Middle_3.jpg",
+            "link": "assets/Middle 3.jpg",
             "typ": 1
         }
     ],
     "allBottom": [
         {
-            "link": "assets/Bottom_1.png",
+            "link": "assets/Bottom 1.png",
             "typ": 2
         },
         {
-            "link": "assets/Bottom_2.png",
+            "link": "assets/Bottom 2.png",
             "typ": 2
         },
         {
-            "link": "assets/Bottom_3.jpg",
+            "link": "assets/Bottom 3.jpg",
             "typ": 2
         }
     ]
