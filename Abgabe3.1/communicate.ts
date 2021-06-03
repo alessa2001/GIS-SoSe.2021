@@ -1,6 +1,15 @@
 
-async function communicater(){
-    event.preventDefault();
+async function communicater(): Promise<void> {
+    let formData: FormData = new FormData(document.forms[0]);
+    let url: string = "https://servertest123somussdasssein.herokuapp.com/";
+    let query: URLSearchParams = new URLSearchParams(<any>formData);
+    url = url + "?" + query.toString();
+    let response: Response = await fetch(url);
+    console.log("Response", response);
+    let inhalt: string = await response.text();
+    console.log(inhalt);
+
+    /*event.preventDefault();
 let formData: FormData = new FormData(document.forms[0]);
 
 
@@ -18,6 +27,7 @@ async function communicate(_url: RequestInfo): Promise<void> {
     
     console.log("Response", response);
    
-  }
+  }*/
   
-  
+}
+document.getElementById("abschicken").addEventListener("click", communicater);
