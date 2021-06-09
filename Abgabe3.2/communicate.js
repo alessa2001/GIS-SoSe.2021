@@ -19,7 +19,7 @@ var ServerRequest;
     }
     async function datenAlsJSON() {
         let formData = new FormData(document.forms[0]);
-        let url = "server.js";
+        let url = "https://servertest123somussdasssein.herokuapp.com";
         let query = new URLSearchParams(formData);
         //let url:  RequestInfo = "http://localhost:8100";
         url += "/json" + "?" + query.toString();

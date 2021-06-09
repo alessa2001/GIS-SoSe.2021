@@ -28,7 +28,7 @@ namespace ServerRequest {
 
     async function datenAlsJSON(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "server.js";
+        let url: string = "https://servertest123somussdasssein.herokuapp.com";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         //let url:  RequestInfo = "http://localhost:8100";
         url += "/json" + "?" + query.toString();
