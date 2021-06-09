@@ -20,7 +20,7 @@ var ServerRequest;
     function handleRequest(_request, _response) {
         console.log("I hear voices"); //es wird "I hear voices" in der Konsole ausgegeben
         console.log(_request.url); //URL vom Request wird in der Konsole ausgegeben
-        _response.setHeader("content-type", "text/html; charset=utf-8"); // Eigenschaften des Headers werden mit setHeader festgelegt
+        _response.setHeader("content-type", "application/json"); // Eigenschaften des Headers werden mit setHeader festgelegt
         _response.setHeader("Access-Control-Allow-Origin", "*"); // es wird festegelgt wer darauf zugreifen darf
         let url = Url.parse(_request.url, true);
         if (url.pathname == "/html") {

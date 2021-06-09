@@ -8,10 +8,19 @@ namespace ServerRequest {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         //let url:  RequestInfo = "http://localhost:8100";
         url += "/html" + "?" + query.toString();
+       
         let response: Response = await fetch(url);
         let inhalt: string = await response.text();
+        let inhaltArray:string[] = inhalt.split("?");
+         inhaltArray = inhaltArray[1].split("&");
+        
+        
         let ausgabe: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("antwort");
-        ausgabe.innerHTML = inhalt;
+       for(let i :number = 0; i<inhaltArray.length-1;i++){
+
+        ausgabe.innerHTML += inhaltArray[i]+"<br>";
+       }
+        
 
 
     }
@@ -19,13 +28,15 @@ namespace ServerRequest {
 
     async function datenAlsJSON(): Promise<void> {
         let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://servertest123somussdasssein.herokuapp.com";
+        let url: string = "server.js";
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         //let url:  RequestInfo = "http://localhost:8100";
         url += "/json" + "?" + query.toString();
+        console.log(url);
         let response: Response = await fetch(url);
-        let objektJSON: Formulardaten = await response.json();
-        console.log(objektJSON);
+        console.log(response);
+        //let objektJSON: Formulardaten = await response.json();
+        
 
     }
 

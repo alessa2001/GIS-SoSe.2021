@@ -21,7 +21,7 @@ export namespace ServerRequest {
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { //Die Funktion wird beim Eingang von Daten abgerufen
         console.log("I hear voices"); //es wird "I hear voices" in der Konsole ausgegeben
         console.log(_request.url); //URL vom Request wird in der Konsole ausgegeben
-        _response.setHeader("content-type", "text/html; charset=utf-8"); // Eigenschaften des Headers werden mit setHeader festgelegt
+        _response.setHeader("content-type", "application/json"); // Eigenschaften des Headers werden mit setHeader festgelegt
         _response.setHeader("Access-Control-Allow-Origin", "*"); // es wird festegelgt wer darauf zugreifen darf
         let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
 
@@ -36,5 +36,14 @@ export namespace ServerRequest {
             _response.write(jsonString);
         }
         _response.end();
+    }
+    interface Formulardaten {
+        vorname: string;
+        nachname: string;
+        nachricht: string;
+
+
+
+
     }
 }
