@@ -11,15 +11,14 @@ namespace ServerRequest {
        
         let response: Response = await fetch(url);
         let inhalt: string = await response.text();
-        let inhaltArray:string[] = inhalt.split("?");
-         inhaltArray = inhaltArray[1].split("&");
+     
         
         
         let ausgabe: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("antwort");
-       for(let i :number = 0; i<inhaltArray.length-1;i++){
+    
 
-        ausgabe.innerHTML += inhaltArray[i]+"<br>";
-       }
+        ausgabe.innerHTML = inhalt;
+       
         
 
 
@@ -32,11 +31,10 @@ namespace ServerRequest {
         let query: URLSearchParams = new URLSearchParams(<any>formData);
         //let url:  RequestInfo = "http://localhost:8100";
         url += "/json" + "?" + query.toString();
-        console.log(url);
-        let response: Response = await fetch(url);
-        console.log(response);
-        //let objektJSON: Formulardaten = await response.json();
         
+        let response: Response = await fetch(url);
+        let objektJSON: Formulardaten = await response.json();
+        console.log(objektJSON);
 
     }
 
