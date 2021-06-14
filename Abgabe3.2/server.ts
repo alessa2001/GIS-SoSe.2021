@@ -41,3 +41,4 @@ export namespace ServerRequest {
     }
   
 }
+//mongodb+srv://User1:User1Gisistgeil@clustermuster.u2vhe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
