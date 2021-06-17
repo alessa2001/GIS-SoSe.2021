@@ -37,4 +37,5 @@ var ServerRequest;
         _response.end();
     }
 })(ServerRequest = exports.ServerRequest || (exports.ServerRequest = {}));
+//mongodb+srv://User1:User1Gisistgeil@clustermuster.u2vhe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 //# sourceMappingURL=server.js.map
