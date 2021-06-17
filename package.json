@@ -1,10 +1,12 @@
 {
-  
   "name": "servertest1somussdasssein",
   "version": "1.0.0",
   "description": "server",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "@types/mongodb": "^3.6.18",
+    "mongodb": "^3.6.9"
+  },
   "devDependencies": {},
   "scripts": {
     "start": "node Abgabe3.2/server.js"
@@ -23,4 +25,3 @@
   },
   "homepage": "https://github.com/alessa2001/GIS-SoSe.2021#readme"
 }
-
