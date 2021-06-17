@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3.4 Server Request</title>
+    <script src="communicate.js" defer></script>
+</head>
+
+<body>
+
+    <h2>Kontaktformular</h2>
+
+    <form>
+        <label for="fname">Vorname</label><br>
+        <input type="text" id="fname" name="vorname" placeholder="Vorname"><br>
+
+        <label for="lname">Nachname</label><br>
+        <input type="text" id="lname" name="nachname" placeholder="Nachname">
+        <br>
+        <br>
+        <label for="nachricht">Deine Nachricht</label><br>
+        <textarea rows="4" name="nachricht" placeholder="Schreibe eine Nachricht"></textarea><br>
+        <br>
+        <label>
+            <input type="checkbox" name="Datenverarbeitung bestätigt" value="Ja">
+            Ich bestätige hiermit, dass ich mit der Verarbeitung meiner Eingaben zum Zwecke der Anfragebearbeitung,
+            einverstanden bin.
+        </label>
+        <br>
+        <br>
+        <button type="button" id="sendbutton">Senden</button>
+        <button type="button" id="jsonbutton">JSON</button>
+    </form>
+    <div id="antwort"></div>
+</body>
+
+</html>
