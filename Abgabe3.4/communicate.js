@@ -2,30 +2,31 @@
 //import { ServerRequest } from "./server";
 var ServerRequest;
 (function (ServerRequest) {
-    async function datenAlsHTML() {
-        let formData = new FormData(document.forms[0]);
-        let url = "https://servertest123somussdasssein.herokuapp.com";
+    //let urlServer: string = "http://localhost:8100";
+    let urlServer = "https://servertest123somussdasssein.herokuapp.com";
+    let result = document.getElementById("solution");
+    let btSend = document.getElementById("send");
+    btSend.addEventListener("click", sendData);
+    let btBack = document.getElementById("giveback");
+    btBack.addEventListener("click", getData);
+    let form = document.getElementById("form");
+    async function sendData() {
+        let formData = new FormData(form);
         let query = new URLSearchParams(formData);
-        //let url:  RequestInfo = "http://localhost:8100";
-        url += "/html" + "?" + query.toString();
+        query.append("command", "insert");
+        let url = urlServer + "?" + query.toString();
         let response = await fetch(url);
-        let inhalt = await response.text();
-        let ausgabe = document.getElementById("antwort");
-        ausgabe.innerHTML = inhalt;
+        let textAnswer = await response.text();
+        console.log(textAnswer);
+        form.reset();
     }
-    async function datenAlsJSON() {
-        let formData = new FormData(document.forms[0]);
-        let url = "https://servertest123somussdasssein.herokuapp.com";
-        let query = new URLSearchParams(formData);
-        //let url:  RequestInfo = "http://localhost:8100";
-        url += "/json" + "?" + query.toString();
+    async function getData() {
+        let query = new URLSearchParams();
+        query.append("command", "get");
+        let url = urlServer + "?" + query.toString();
         let response = await fetch(url);
-        let objektJSON = await response.json();
-        console.log(objektJSON);
+        let jsonAnswer = await response.json();
+        result.innerText = JSON.stringify(jsonAnswer);
     }
-    let htmlButton = document.getElementById("htmlbutton");
-    htmlButton.addEventListener("click", datenAlsHTML);
-    let jsonButton = document.getElementById("jsonbutton");
-    jsonButton.addEventListener("click", datenAlsJSON);
 })(ServerRequest || (ServerRequest = {}));
 //# sourceMappingURL=communicate.js.map

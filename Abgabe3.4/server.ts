@@ -1,44 +1,94 @@
 import * as Http from "http";
 import * as Url from "url";
+import * as Mongo from "mongodb";
 
 export namespace ServerRequest {
-    console.log("Starting server"); //"Starting server" wird in der Konsole ausgegeben
-    let port: number = Number(process.env.PORT); //es wird eine neue Variable "Port" angelegt
-    if (!port) //stellt sozusagen eine Art Hafen dar
-        port = 8100; //Der Port(Hafen) wird mit "8100" initialisiert
 
-    let server: Http.Server = Http.createServer(); //hier wird ein neuer Server erstellt
-    server.addListener("request", handleRequest); //der Server bekommt einen Listener dazu, welcher die Funktion handleRequest aufruft
-    server.addListener("listening", handleListen); //ebenfalls wird ein zweiter Listener angehängt, der die Funktion handleListen aufruft
-    server.listen(port); // Der Server hört sozusagen dem vorher definierten Port zu
-    // Hier wird der Server generiert/erzeugt. Unter anderem werden ihm ein Port und ein Listener zugewiesen, der auf den Eingang von Dateien wartet.
+    let collectionUsers: Mongo.Collection;
 
-    function handleListen(): void {
-        console.log("Listening"); //Es wird Listening in der Konsole ausgegeben
+    console.log("Starting server"); //Konsolenausgabe: "Startin server" 
+    let port: number = Number(process.env.PORT); // Nimmt sich den aktuellen Port
+    if (!port) 
+        port = 8100; // wenn es kein Port gibt, dann wird der Port mit dem wert 8100 initialisiert
+
+    let databaseURL: string = "mongodb://localhost:27017";
+    //mongodb+srv://User1:User1Gisistgeil@clustermuster.u2vhe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+    
+    startServer(port);
+    connectToDatabase(databaseURL);
+
+    function startServer(_port: number | string): void {
+        let server: Http.Server = Http.createServer(); //Erstellt neuen Server
+        server.addListener("request", handleRequest); //Dem Server wird ein Listener angehängt, der so die Funktion handleRequest aufruft
+        server.addListener("listening", handleListen); //Dem Server wird ein Listener angehängt, der so die Funktion handleListen aufruft
+        server.listen(_port); //Server hört auf den definierten Port
     }
 
+    async function connectToDatabase(_url: string): Promise<void> {
+        let options: Mongo.MongoClientOptions = { useNewUrlParser: true, useUnifiedTopology: true };
+        let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
+        await mongoClient.connect();
+        collectionUsers = mongoClient.db("Registration").collection("Users");
+        console.log("Database connection", collectionUsers != undefined);
+    }
 
-    function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { //Die Funktion wird beim Eingang von Daten abgerufen
-        console.log("I hear voices"); //es wird "I hear voices" in der Konsole ausgegeben
-        console.log(_request.url); //URL vom Request wird in der Konsole ausgegeben
-      // Eigenschaften des Headers werden mit setHeader festgelegt
-        _response.setHeader("Access-Control-Allow-Origin", "*"); // es wird festegelgt wer darauf zugreifen darf
-        let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+    function handleListen(): void { 
+        console.log("Listening"); // Konsolenausgabe: "Listening" 
+    }
 
-        if (url.pathname == "/html") {
-            _response.setHeader("content-type", "text/html; charset=utf-8");
-            for (let key in url.query) {
-                _response.write(key + ":" + url.query[key] + "</br>");
+    interface Query {
+        [type: string]: string | string[];
+    }
 
+    interface DBUser {
+        fname: string;
+        nname: string;
+        email: string;
+        password: string;
+    }
+
+    async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
+        console.log("I hear voices!");
+        _response.setHeader("content-type", "text/html; charset=utf-8");
+        _response.setHeader("Access-Control-Allow-Origin", "*");
+        if (_request.url) {
+            let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
+            let query: Query = url.query;
+            let command: string = <string>query.command;
+            if (command == "insert") {
+                let fname: string = <string>query.fname; 
+                let nname: string = <string>query.nname;   
+                let email: string = <string>query.email;
+                let password: string = <string>query.password;
+                if (fname && nname && email && password) {
+                    let dbUser: DBUser = { fname: fname, nname: nname, email: email, password: password };
+                    await storeData(dbUser);
+                    let jsonString: string = JSON.stringify(url.query);
+                    _response.write(jsonString);
+                    _response.write(" User saved successfully");
+                } else {
+                    console.log("Not hand over everything");
+                }
+            } else if (command == "get") {
+                let dbUsers: DBUser[] = await getAllDBUsers();
+                _response.write(JSON.stringify(dbUsers));
+            } else {
+                console.log("Wrong command");
             }
-        }
-        if (url.pathname == "/json") {
-            _response.setHeader("content-type", "application/json"); 
-            let jsonString: String = JSON.stringify(url.query);
-            _response.write(jsonString);
+
         }
         _response.end();
     }
-  
+
+    async function storeData(_dbUser: DBUser): Promise <void> {
+        await collectionUsers.insertOne(_dbUser);
+    }
+
+    async function getAllDBUsers(): Promise<DBUser[]> {
+        let dbUser: DBUser[];
+        dbUser = await collectionUsers.find().toArray();
+        return dbUser;
+    }
+        
+
 }
-//mongodb+srv://User1:User1Gisistgeil@clustermuster.u2vhe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority

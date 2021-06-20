@@ -2,58 +2,43 @@
 
 namespace ServerRequest {
 
-    async function datenAlsHTML(): Promise<void> {
-        let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://servertest123somussdasssein.herokuapp.com";
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        //let url:  RequestInfo = "http://localhost:8100";
-        url += "/html" + "?" + query.toString();
-       
-        let response: Response = await fetch(url);
-        let inhalt: string = await response.text();
+     //let urlServer: string = "http://localhost:8100";
+     let urlServer: string = "https://servertest123somussdasssein.herokuapp.com";
+
+     let result: HTMLParagraphElement = <HTMLDivElement>document.getElementById("solution"); 
+     let btSend: HTMLButtonElement = <HTMLButtonElement>document.getElementById("send");
+     btSend.addEventListener("click", sendData);
+     let btBack: HTMLButtonElement = <HTMLButtonElement>document.getElementById("giveback");
+     btBack.addEventListener("click", getData);
+     let form: HTMLFormElement = <HTMLFormElement> document.getElementById("form");
      
-        
-        
-        let ausgabe: HTMLParagraphElement = <HTMLParagraphElement>document.getElementById("antwort");
-    
-
-        ausgabe.innerHTML = inhalt;
-       
-        
-
-
-    }
-
-
-    async function datenAlsJSON(): Promise<void> {
-        let formData: FormData = new FormData(document.forms[0]);
-        let url: string = "https://servertest123somussdasssein.herokuapp.com";
-        let query: URLSearchParams = new URLSearchParams(<any>formData);
-        //let url:  RequestInfo = "http://localhost:8100";
-        url += "/json" + "?" + query.toString();
-        
-        let response: Response = await fetch(url);
-        let objektJSON: Formulardaten = await response.json();
-        console.log(objektJSON);
-
-    }
-
-    let htmlButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("htmlbutton");
-    htmlButton.addEventListener("click", datenAlsHTML);
-
-    let jsonButton: HTMLButtonElement = <HTMLButtonElement>document.getElementById("jsonbutton");
-    jsonButton.addEventListener("click", datenAlsJSON);
-
-
-    interface Formulardaten {
-        vorname: string;
-        nachname: string;
-        nachricht: string;
-
-
-
-
-    }
-
+     
+     async function sendData(): Promise<void> {
+         let formData: FormData = new FormData(form);
+         let query: URLSearchParams = new URLSearchParams(<URLSearchParams>formData);
+         query.append("command", "insert");
+         let url: string = urlServer + "?" + query.toString();
+         let response: Response = await fetch(url);
+         let textAnswer: string = await response.text();
+         console.log(textAnswer);
+         form.reset();
+      }
+ 
+     interface DBUser {
+         fname: string;
+         nname: string;
+         email: string;
+         password: string;
+     }
+ 
+     async function getData(): Promise<void> {
+         let query: URLSearchParams = new URLSearchParams();
+         query.append("command", "get");
+         let url: string = urlServer + "?" + query.toString();
+         let response: Response = await fetch(url);
+         let jsonAnswer: DBUser = await response.json();
+         result.innerText = JSON.stringify(jsonAnswer);
+     }
 }
+
 
