@@ -4,7 +4,6 @@ namespace ServerRequest {
     interface ServerAntwort {
         fname: string;
         lname: string;
-        adress: string;
         mail: string;
 
     }
