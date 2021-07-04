@@ -27,7 +27,7 @@ var ServerRequest;
         if (_request.url) {
             let url = Url.parse(_request.url, true);
             let pathname = url.pathname;
-            let benutzerBeispiel = { fname: url.query.fname + "", lname: url.query.lname + "", adress: url.query.adress + "", mail: url.query.mail + "" };
+            let benutzerBeispiel = { name: url.query.name + "", zeit: url.query.zeit + "" };
             if (pathname == "/send") {
                 let jsonString = JSON.stringify(url.query);
                 console.log(jsonString);

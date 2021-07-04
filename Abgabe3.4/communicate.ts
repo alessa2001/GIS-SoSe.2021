@@ -2,9 +2,9 @@
 
 namespace ServerRequest {
     interface ServerAntwort {
-        fname: string;
-        lname: string;
-        mail: string;
+        name: string;
+        zeit: string;
+
 
     }
 

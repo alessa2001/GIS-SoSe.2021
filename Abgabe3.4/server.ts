@@ -10,9 +10,8 @@ export namespace ServerRequest {
    
 
     interface ServerAntwort {
-        fname: string;
-        lname: string;
-        mail: string;
+        name: string;
+        zeit: string;
     }
 
     console.log("Starting server"); //Starting server wird ausgegeben
@@ -41,7 +40,7 @@ export namespace ServerRequest {
 
             let url: Url.UrlWithParsedQuery = Url.parse(_request.url, true);
             let pathname: string = <string>url.pathname;
-            let benutzerBeispiel: ServerAntwort = { fname: url.query.fname + "", lname: url.query.lname + "", adress: url.query.adress + "", mail: url.query.mail + "" };
+            let benutzerBeispiel: ServerAntwort = { name: url.query.name + "", zeit: url.query.zeit + "" };
 
             if (pathname == "/send") {
                 let jsonString: string = JSON.stringify(url.query);
