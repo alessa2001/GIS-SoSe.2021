@@ -25,7 +25,7 @@ var ServerRequest;
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
-        collectionUsers = mongoClient.db("Registration").collection("Users");
+        collectionUsers = mongoClient.db("memoryal").collection("score");
         console.log("Database connection", collectionUsers != undefined);
     }
     function handleListen() {
