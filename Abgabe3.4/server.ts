@@ -4,7 +4,7 @@ import * as Mongo from "mongodb";
 
 export namespace ServerRequest {
 
-    let _url: string = "https://mongodbnetbrowser.herokuapp.com/?u=User1&p=User1Gisistgeil&a=clustermuster.u2vhe.mongodb.net&n=memoryal&c=score";
+    let _url: string = "mongodb+srv://User1:User1Gisistgeil@clustermuster.u2vhe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
     //let _url: string = "mongodb://localhost:27017";
    

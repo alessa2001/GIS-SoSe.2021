@@ -6,7 +6,7 @@ const Url = require("url");
 const Mongo = require("mongodb");
 var ServerRequest;
 (function (ServerRequest) {
-    let _url = "https://mongodbnetbrowser.herokuapp.com/?u=User1&p=User1Gisistgeil&a=clustermuster.u2vhe.mongodb.net&n=memoryal&c=score";
+    let _url = "mongodb+srv://User1:User1Gisistgeil@clustermuster.u2vhe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
     console.log("Starting server"); //Starting server wird ausgegeben
     let port = Number(process.env.PORT);
     if (!port) //Port == "Hafen"
