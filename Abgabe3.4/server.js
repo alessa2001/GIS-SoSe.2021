@@ -11,7 +11,7 @@ var ServerRequest;
     let port = Number(process.env.PORT); // Nimmt sich den aktuellen Port
     if (!port)
         port = 8100; // wenn es kein Port gibt, dann wird der Port mit dem wert 8100 initialisiert
-    let databaseURL = "mongodb://localhost:27017";
+    let databaseURL = "https://mongodbnetbrowser.herokuapp.com/?u=User1&p=User1Gisistgeil&a=clustermuster.u2vhe.mongodb.net&n=memoryal&c=score";
     //mongodb+srv://User1:User1Gisistgeil@clustermuster.u2vhe.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
     startServer(port);
     connectToDatabase(databaseURL);
